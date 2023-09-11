@@ -29,7 +29,7 @@ jobs:
       with:
         dotnet-version: ${{env.dotnet-version}}
     - name: Checkout Dafny
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: dafny
         submodules: recursive
@@ -45,7 +45,7 @@ jobs:
       working-directory: dafny
       run: git apply customBoogie.patch
     - name: Checkout Boogie
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         repository: boogie-org/boogie
         path: dafny/boogie
@@ -86,7 +86,7 @@ jobs:
     steps:
       # Check out Dafny so that highlighted source is possible
       - name: Checkout Dafny
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: dafny
           submodules: recursive
